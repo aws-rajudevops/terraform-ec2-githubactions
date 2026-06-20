@@ -23,3 +23,6 @@ jobs: # Pipeline. One workflow can have multiple pipelines
           aws-region: us-east-1 # Change to your preferred AWS region
       - name: terraform plan
         run: terraform plan
+
+      - name: terraform apply
+        run: terraform apply -auto-approve
