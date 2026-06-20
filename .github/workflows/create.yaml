@@ -23,10 +23,5 @@ jobs: # Pipeline. One workflow can have multiple pipelines
           aws-region: us-east-1 # Change to your preferred AWS region
       - name: terraform plan
         run: terraform plan
-
-<<<<<<< HEAD
       - name: terraform destroy
-=======
-      - name: terraform apply
->>>>>>> 87e6478728b87a65834c0011349bc41cc072cb5f
         run: terraform destroy -auto-approve
