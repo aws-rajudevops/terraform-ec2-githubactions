@@ -1,0 +1,19 @@
+name: ec2-creation
+# When to trigger this pipeline. We can trigger on push or manual or someother events like creating PR, updating PR, creating branches, creating issues
+on: [push] # triggers
+jobs: # Pipeline. One workflow can have multiple pipelines
+  terraform:
+    runs-on: ubuntu-latest # Linux OS. We can have windows or MAC
+    steps: # stages
+      - name: chechout the code 
+        uses: actions/checkout@v5
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: terraform init
+        run: terraform init
+      - name: terraform validate
+        run: terraform validate
+      - name: terraform plan
+        run: terraform plan
+        
